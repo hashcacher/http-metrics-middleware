@@ -27,7 +27,7 @@
   "homepage": "https://github.com/qlik-oss/http-metrics-middleware#readme",
   "dependencies": {
     "express": "4.16.2",
-    "lodash": "4.17.5",
+    "lodash": "4.17.9",
     "on-finished": "2.3.0",
     "performance-now": "2.1.0",
     "prom-client": "11.0.0",
