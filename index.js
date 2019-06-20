@@ -167,9 +167,8 @@ class MetricsMiddleware {
       // if we're on a route that has been mounted, resp.req.route.path will be set
       if (
         this.options.includePath
-        && resp.req
-        && resp.req.route
-        && resp.req.route.path
+        && req
+        && req.url
       ) {
         labels.path = this.options.normalizePath(req, this.options);
       }
@@ -194,7 +193,7 @@ class MetricsMiddleware {
   }
 
   normalizePath(req) {
-    let path = url.parse(req.originalUrl).pathname;
+    let path = url.parse(req.url).pathname;
     path = this.replaceParams(path, req.params);
     return this.urlValueParser.replacePathValues(path);
   }
